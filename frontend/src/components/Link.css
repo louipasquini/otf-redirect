@@ -1,0 +1,73 @@
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.itens {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    color: #727272;
+    background-color: #f0f0f0;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.itens:hover {
+    background-color: #d8d8d8;
+}
+
+.itens > hr {
+    height: 40px;
+}
+
+.linkContainer > div > div {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+.item > p {
+    margin: 0px;
+}
+
+.item > h2 {
+    margin: 0;
+}
+
+.complexItens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.close {
+    visibility: collapse;
+}
+
+.cIMiddle > p {
+    margin: 0;
+}
+
+.outrosLinks > p {
+    margin: 0;
+}
+
+.outrosLinks {
+    margin-top: 5px;
+}
+
+.horario {
+    margin-bottom: 5px;
+}
+
+.horario > p {
+    margin: 0;
+}
+
+.horario > h1 {
+    margin: 0;
+}

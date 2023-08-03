@@ -1,25 +1,35 @@
 import React from "react";
-import { useState } from "react";
+import Link from "./Link";
 import axios from "axios";
+import { useState } from "react";
 
 axios.defaults.baseURL = 'http://localhost:3000'
 
-const Link = () => {
+const Links = () => {
+    const [dbLoaded,setDbLoaded] = useState(false)
     const [data,setData] = useState('')
     const getLinks = async () => {
         try {
             const retorno = await axios.get('/')
-            setData(JSON.stringify(retorno.data))
+            setData(retorno.data)
         } catch (err) {
             console.log(err)
         }
     }
-    getLinks()
+    if (!dbLoaded) {
+        getLinks()
+        setDbLoaded(true)
+    }
+
 
     console.log(data)
-    
-    return <p>Hello world!</p>
 
+    return (
+    <>
+        <Link />
+        <Link />
+    </>
+    )
 }
 
-export default Link;
+export default Links;
