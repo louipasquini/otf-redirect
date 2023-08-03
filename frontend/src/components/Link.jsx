@@ -3,7 +3,7 @@ import { useState } from "react";
 import { QRCodeCanvas } from 'qrcode.react';
 import "./Link.css"
 
-const Link = () => {
+const Link = ({ link }) => {
     const [closeTab,setCloseTab] = useState("complexItens")
 
     const clickTab = (e) => {
@@ -14,9 +14,11 @@ const Link = () => {
         }
     }
 
+    const linkTela = `otfshort.com/${link.short}`
+
     const qrcode = (
         <QRCodeCanvas
-        value={'otfshort.com/teste-link'}
+        value={linkTela}
         size={190}
         bgColor={"#f0f0f0"}
         level={"H"}
@@ -27,19 +29,19 @@ const Link = () => {
     <div className="linkContainer">
         <div className="itens" onClick={clickTab}>
             <div className="item">
-                <p>Link</p><h2>otfshort.com/teste-link</h2>
+                <p>Link</p><h2>{linkTela}</h2>
             </div>
             <hr />
             <div className="item">
-                <p>Cliente</p><h2>CBDN</h2>
+                <p>Cliente</p><h2>{link.cliente}</h2>
             </div>
             <hr />
             <div className="item">
-                <p>Projeto</p><h2>BROpen</h2>
+                <p>Projeto</p><h2>{link.projeto}</h2>
             </div>
             <hr />
             <div className="item">
-                <p>Acessos</p><h2>0</h2>
+                <p>Acessos</p><h2>{link.acessos}</h2>
             </div>
         </div>
         <div className={closeTab}>
