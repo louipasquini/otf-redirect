@@ -4,7 +4,7 @@ import { QRCodeCanvas } from 'qrcode.react';
 import "./Link.css"
 
 const Link = ({ link }) => {
-    const [closeTab,setCloseTab] = useState("complexItens")
+    const [closeTab,setCloseTab] = useState("complexItens close")
 
     const clickTab = (e) => {
         if (closeTab === "complexItens") {
